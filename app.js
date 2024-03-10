@@ -97,11 +97,11 @@ loadingAnimation();
 
 
 function cursorAnimation() {
-    // Shery.mouseFollower({
-    //     skew: true,
-    //     ease: "cubic-bezier(0.43, 1, 0.320, 1)",
-    //     duration: 1,
-    // });
+    Shery.mouseFollower({
+        skew: true,
+        ease: "cubic-bezier(0.43, 1, 0.320, 1)",
+        duration: 1,
+    });
 
     Shery.makeMagnet(".nav-link h4 , #logo");
 

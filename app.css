@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @font-face {
     font-family: "font1";
     src: url(plain-light-webfont.ttf);
@@ -21,6 +28,7 @@
 * {
     padding: 0;
     margin: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     color: white;
 }
@@ -32,6 +40,7 @@ body {
 }
 
 body {
+    /* background-color: rgb(20, 20, 20); */
     overflow-x: hidden;
 }
 
@@ -52,11 +61,19 @@ body {
 }
 
 .loader-content-1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     overflow: hidden;
     gap: 3vw;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
 }
 
@@ -74,8 +91,14 @@ h6 {
 }
 
 #counter-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 2vw;
 }
@@ -92,9 +115,47 @@ h6 {
     font-weight: 400;
     font-size: 6vw;
     text-transform: uppercase;
+    -webkit-animation-name: loaderAnime;
     animation-name: loaderAnime;
+    -webkit-animation-duration: 2s;
     animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
+}
+
+
+@-webkit-keyframes loaderAnime {
+    0% {
+        font-famil: font1;
+        -webkit-text-stroke: 1px #fff;
+        color: #fff;
+        font-weight: 500;
+        opacity: 1;
+    }
+
+    48% {
+        font-famil: font1;
+        -webkit-text-stroke: 1px #fff;
+        color: #fff;
+        font-weight: 500;
+        opacity: 0;
+    }
+
+    50% {
+        font-family: font3;
+        -webkit-text-stroke: 1px #fff;
+        font-weight: 500;
+        color: transparent;
+        opacity: 1;
+    }
+
+    100% {
+        font-family: font3;
+        -webkit-text-stroke: 1px #fff;
+        font-weight: 500;
+        color: transparent;
+        opacity: 0;
+    }
 }
 
 
@@ -152,14 +213,22 @@ h6 {
 }
 
 nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding: 2.7vh 6vw;
     margin-bottom: 7vh;
 }
 
 nav .nav-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 2vw;
 }
@@ -173,6 +242,8 @@ nav .nav-link h4 {
 #page1-container {
     width: 70vw;
     margin-left: 30%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     overflow: hidden;
     /* display: flex;
@@ -183,9 +254,15 @@ nav .nav-link h4 {
 .hero {
     /* width: 70vw; */
     /* margin-left: 30%; */
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     /* z-index: 999; */
     width: 100%;
@@ -229,13 +306,15 @@ nav .nav-link h4 {
     background-color: rgb(20, 20, 20);
     position: relative;
     padding: 17vh 3vw;
+    overflow: hidden;
 }
 
 .video-container {
     height: 70vh;
     width: 71vw;
     position: relative;
-    left: 23.81%;
+    background-color: rgb(20, 20, 20);
+    left: 27%;
     background-image: url("https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg");
     background-size: cover;
     background-position: center;
@@ -245,13 +324,16 @@ nav .nav-link h4 {
     width: 100%;
     position: absolute;
     height: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
 .video-container video {
     width: 100%;
     height: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
+    opacity: 0;
 }
 
 #video-cursor {
@@ -262,8 +344,14 @@ nav .nav-link h4 {
     border-radius: 50%;
     background-color: rgb(255, 92, 33);
     z-index: 999;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     left: 80%;
 }
@@ -314,10 +402,17 @@ nav .nav-link h4 {
     position: relative;
     /* background-color: red; */
     padding: 5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     gap: 2vw;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
     margin-top: 14vh;
 }
@@ -334,7 +429,9 @@ nav .nav-link h4 {
     position: relative;
     height: 100%;
     width: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
+    -o-object-position: center;
     object-position: center;
 }
 
@@ -350,8 +447,14 @@ nav .nav-link h4 {
     border: 1px solid #fff;
     margin-left: 5vw;
     margin-top: 41vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     position: relative;
 }
@@ -362,8 +465,14 @@ nav .nav-link h4 {
     border-radius: 50%;
     border: 1px solid #fff;
     margin-right: 3vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     position: relative;
 }
@@ -375,8 +484,14 @@ nav .nav-link h4 {
     border: 1px solid #fff;
     margin-top: 75vh;
     margin-left: 5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     position: relative;
 }
@@ -401,12 +516,20 @@ nav .nav-link h4 {
     position: absolute;
     left: 0;
     top: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     border-radius: 50%;
     background-color: #fff;
     scale: 0;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
     transition: all ease 0.3s;
 }
 
@@ -426,7 +549,11 @@ nav .nav-link h4 {
     width: 75%;
     color: black;
     scale: 0;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
     transition: all ease 0.3s;
+    -webkit-transition-delay: 0.3s;
+    -o-transition-delay: 0.3s;
     transition-delay: 0.3s;
 }
 
@@ -450,16 +577,22 @@ nav .nav-link h4 {
 
 .circle-1:hover .circle-in p {
     scale: 1;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
     transition: all ease 0.3s;
 }
 
 .circle-2:hover .circle-in p {
     scale: 1;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
     transition: all ease 0.3s;
 }
 
 .circle-3:hover .circle-in p {
     scale: 1;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
     transition: all ease 0.3s;
 }
 
@@ -476,7 +609,11 @@ nav .nav-link h4 {
 }
 
 .image-under-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 3vh 0vw;
     font-family: 'font1';
@@ -511,8 +648,14 @@ nav .nav-link h4 {
 #circle-4 {
     height: 100vh;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -522,13 +665,21 @@ nav .nav-link h4 {
     height: 48vh;
     border-radius: 50%;
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
 #circle-project:hover {
     scale: 0.9;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
     transition: all ease 0.3s;
 }
 
@@ -599,6 +750,8 @@ nav .nav-link h4 {
 }
 
 .page4-container-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -624,8 +777,14 @@ nav .nav-link h4 {
 }
 
 .page4-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     border-bottom: 2px solid #dadada;
 }
@@ -661,18 +820,36 @@ nav .nav-link h4 {
     color: transparent;
     text-transform: uppercase;
     margin-right: 16px;
+    -webkit-animation-name: anime1;
     animation-name: anime1;
+    -webkit-animation-duration: 17s;
     animation-duration: 17s;
+    -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
 }
 
-@keyframes anime1 {
+@-webkit-keyframes anime1 {
     from {
+        -webkit-transform: translateX(0);
         transform: translateX(0);
     }
 
     to {
+        -webkit-transform: translateX(calc(-100% - 20px));
+        transform: translateX(calc(-100% - 20px));
+    }
+}
+
+@keyframes anime1 {
+    from {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    to {
+        -webkit-transform: translateX(calc(-100% - 20px));
         transform: translateX(calc(-100% - 20px));
     }
 }
@@ -692,10 +869,16 @@ nav .nav-link h4 {
     color: transparent;
     text-transform: uppercase;
     margin-right: 16px;
+    -webkit-transform: translateX(calc(-100% - 20px));
+    -ms-transform: translateX(calc(-100% - 20px));
     transform: translateX(calc(-100% - 20px));
+    -webkit-animation-name: anime1;
     animation-name: anime1;
+    -webkit-animation-duration: 17s;
     animation-duration: 17s;
+    -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
     animation-direction: reverse;
 }
@@ -737,7 +920,11 @@ nav .nav-link h4 {
 }
 
 .page6-container-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
@@ -784,6 +971,8 @@ nav .nav-link h4 {
     left: 0;
     top: 0;
     opacity: 0;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
@@ -804,15 +993,25 @@ nav .nav-link h4 {
     }
 
     .loader-content-1 {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         height: fit-content;
         overflow: hidden;
         gap: 3vw;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
         justify-content: flex-start;
         position: relative;
         left: 50%;
         top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
     }
 
@@ -831,8 +1030,14 @@ nav .nav-link h4 {
     }
 
     #counter-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         gap: 2vw;
     }
@@ -849,9 +1054,47 @@ nav .nav-link h4 {
         font-weight: 400;
         font-size: 6vw;
         text-transform: uppercase;
+        -webkit-animation-name: loaderAnime;
         animation-name: loaderAnime;
+        -webkit-animation-duration: 2s;
         animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
         animation-iteration-count: infinite;
+    }
+
+
+    @-webkit-keyframes loaderAnime {
+        0% {
+            font-famil: font1;
+            -webkit-text-stroke: 1px #fff;
+            color: #fff;
+            font-weight: 500;
+            opacity: 1;
+        }
+
+        48% {
+            font-famil: font1;
+            -webkit-text-stroke: 1px #fff;
+            color: #fff;
+            font-weight: 500;
+            opacity: 0;
+        }
+
+        50% {
+            font-family: font3;
+            -webkit-text-stroke: 1px #fff;
+            font-weight: 500;
+            color: transparent;
+            opacity: 1;
+        }
+
+        100% {
+            font-family: font3;
+            -webkit-text-stroke: 1px #fff;
+            font-weight: 500;
+            color: transparent;
+            opacity: 0;
+        }
     }
 
 
@@ -901,8 +1144,14 @@ nav .nav-link h4 {
     }
 
     nav {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
         justify-content: flex-end;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         padding: 3vh 6vw;
         margin-bottom: 7vh;
@@ -926,6 +1175,8 @@ nav .nav-link h4 {
     #page1-container {
         width: 70vw;
         margin-left: 4vw;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         height: fit-content;
         overflow: hidden;
         padding: 13vh 0vw;
@@ -942,9 +1193,15 @@ nav .nav-link h4 {
         display: flex;
         align-items: center;
         z-index: 999; */
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         height: fit-content;
         overflow: hidden;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         width: 100%;
         height: 100%;
@@ -1001,8 +1258,14 @@ nav .nav-link h4 {
         background-image: url("https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg");
         background-size: cover;
         background-position: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
     }
 
@@ -1010,12 +1273,14 @@ nav .nav-link h4 {
         width: 100%;
         position: absolute;
         height: 100%;
+        -o-object-fit: cover;
         object-fit: cover;
     }
 
     .video-container video {
         width: 100%;
         height: 100%;
+        -o-object-fit: cover;
         object-fit: cover;
     }
 
@@ -1027,10 +1292,18 @@ nav .nav-link h4 {
         border-radius: 50%;
         background-color: rgb(255, 92, 33);
         z-index: 999;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
     }
 
@@ -1088,10 +1361,17 @@ nav .nav-link h4 {
         position: relative;
         /* background-color: red; */
         padding: 5vw;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
         justify-content: flex-start;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
         gap: 2vw;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
         align-items: flex-start;
         margin-top: 0vh;
     }
@@ -1108,7 +1388,9 @@ nav .nav-link h4 {
         position: relative;
         height: 100%;
         width: 100%;
+        -o-object-fit: cover;
         object-fit: cover;
+        -o-object-position: center;
         object-position: center;
     }
 
@@ -1124,8 +1406,14 @@ nav .nav-link h4 {
         border: 1px solid #fff;
         margin-left: 5vw;
         margin-top: 41vh;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         position: relative;
         display: none;
@@ -1137,8 +1425,14 @@ nav .nav-link h4 {
         border-radius: 50%;
         border: 1px solid #fff;
         margin-right: 3vw;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         position: relative;
         display: none;
@@ -1151,8 +1445,14 @@ nav .nav-link h4 {
         border: 1px solid #fff;
         margin-top: 75vh;
         margin-left: 5vw;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         position: relative;
         display: none;
@@ -1178,12 +1478,20 @@ nav .nav-link h4 {
         position: absolute;
         left: 0;
         top: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         border-radius: 50%;
         background-color: #fff;
         scale: 0;
+        -webkit-transition: all ease 0.3s;
+        -o-transition: all ease 0.3s;
         transition: all ease 0.3s;
     }
 
@@ -1203,7 +1511,11 @@ nav .nav-link h4 {
         width: 75%;
         color: black;
         scale: 0;
+        -webkit-transition: all ease 0.3s;
+        -o-transition: all ease 0.3s;
         transition: all ease 0.3s;
+        -webkit-transition-delay: 0.3s;
+        -o-transition-delay: 0.3s;
         transition-delay: 0.3s;
     }
 
@@ -1227,16 +1539,22 @@ nav .nav-link h4 {
 
     .circle-1:hover .circle-in p {
         scale: 1;
+        -webkit-transition: all ease 0.3s;
+        -o-transition: all ease 0.3s;
         transition: all ease 0.3s;
     }
 
     .circle-2:hover .circle-in p {
         scale: 1;
+        -webkit-transition: all ease 0.3s;
+        -o-transition: all ease 0.3s;
         transition: all ease 0.3s;
     }
 
     .circle-3:hover .circle-in p {
         scale: 1;
+        -webkit-transition: all ease 0.3s;
+        -o-transition: all ease 0.3s;
         transition: all ease 0.3s;
     }
 
@@ -1254,7 +1572,11 @@ nav .nav-link h4 {
     }
 
     .image-under-text {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
         padding: 3vh 0vw;
         font-family: 'font1';
@@ -1289,8 +1611,14 @@ nav .nav-link h4 {
     #circle-4 {
         height: 60vh;
         width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
     }
 
@@ -1300,13 +1628,21 @@ nav .nav-link h4 {
         height: 33vh;
         border-radius: 50%;
         position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
     }
 
     #circle-project:hover {
         scale: 0.9;
+        -webkit-transition: all ease 0.3s;
+        -o-transition: all ease 0.3s;
         transition: all ease 0.3s;
     }
 
@@ -1389,7 +1725,12 @@ nav .nav-link h4 {
     }
 
     .page4-container-flex {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
         flex-direction: column-reverse;
     }
 
@@ -1419,8 +1760,14 @@ nav .nav-link h4 {
     }
 
     .page4-info {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         border-bottom: 2px solid #dadada;
     }
@@ -1461,18 +1808,36 @@ nav .nav-link h4 {
         color: transparent;
         text-transform: uppercase;
         margin-right: 16px;
+        -webkit-animation-name: anime1;
         animation-name: anime1;
+        -webkit-animation-duration: 17s;
         animation-duration: 17s;
+        -webkit-animation-timing-function: linear;
         animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
         animation-iteration-count: infinite;
     }
 
-    @keyframes anime1 {
+    @-webkit-keyframes anime1 {
         from {
+            -webkit-transform: translateX(0);
             transform: translateX(0);
         }
 
         to {
+            -webkit-transform: translateX(calc(-100% - 20px));
+            transform: translateX(calc(-100% - 20px));
+        }
+    }
+
+    @keyframes anime1 {
+        from {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+        }
+
+        to {
+            -webkit-transform: translateX(calc(-100% - 20px));
             transform: translateX(calc(-100% - 20px));
         }
     }
@@ -1492,10 +1857,16 @@ nav .nav-link h4 {
         color: transparent;
         text-transform: uppercase;
         margin-right: 16px;
+        -webkit-transform: translateX(calc(-100% - 20px));
+        -ms-transform: translateX(calc(-100% - 20px));
         transform: translateX(calc(-100% - 20px));
+        -webkit-animation-name: anime1;
         animation-name: anime1;
+        -webkit-animation-duration: 17s;
         animation-duration: 17s;
+        -webkit-animation-timing-function: linear;
         animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
         animation-iteration-count: infinite;
         animation-direction: reverse;
     }
@@ -1549,8 +1920,15 @@ nav .nav-link h4 {
     }
 
     .page6-container-info {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         gap: 3vh;
     }
@@ -1590,6 +1968,4 @@ nav .nav-link h4 {
 
 
     /* page 6 end */
-
-
 }
