@@ -982,6 +982,15 @@ nav .nav-link h4 {
 
 @media (max-width:600px) {
 
+    .mousefollower {
+        border: 2px solid #fff;
+        background-color: rgb(255, 255, 255);
+        scale: 2;
+        mix-blend-mode: difference;
+        display: none;
+    }
+
+
 
     /* loader start */
     #loader {
