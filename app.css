@@ -1,10 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 @font-face {
     font-family: "font1";
     src: url(plain-light-webfont.ttf);
@@ -57,7 +50,8 @@ body {
     position: fixed;
     z-index: 9999;
     width: 100%;
-    padding: 9vw 8vw;
+    padding: 9vh 8vw;
+    pointer-events: none;
 }
 
 .loader-content-1 {
@@ -197,13 +191,14 @@ h6 {
     position: relative;
     background-color: black;
     z-index: 99;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #page1 {
     /* overflow: hidden; */
     height: 100vh;
     width: 100%;
+    position: relative;
     background-color: rgb(20, 20, 20);
     z-index: 100;
 }
@@ -224,6 +219,8 @@ nav {
     align-items: center;
     padding: 2.7vh 6vw;
     margin-bottom: 7vh;
+    position: relative;
+    z-index: 999;
 }
 
 nav .nav-link {
@@ -245,7 +242,7 @@ nav .nav-link h4 {
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
-    overflow: hidden;
+    overflow-y: hidden;
     /* display: flex;
     align-items: center; */
     z-index: 999;
@@ -306,14 +303,13 @@ nav .nav-link h4 {
     background-color: rgb(20, 20, 20);
     position: relative;
     padding: 17vh 3vw;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .video-container {
     height: 70vh;
     width: 71vw;
     position: relative;
-    background-color: rgb(20, 20, 20);
     left: 27%;
     background-image: url("https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg");
     background-size: cover;
