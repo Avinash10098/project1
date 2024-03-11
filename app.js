@@ -1,23 +1,35 @@
 function locomotiveAnimation() {
+
+
     gsap.registerPlugin(ScrollTrigger);
 
-    const locoScroll = new LocomotiveScroll({
-        el: document.querySelector("#main"),
+    // new code 
+    const scroll = new LocomotiveScroll({
+        el: document.querySelector('#main'),
         smooth: true,
-
-        // for tablet smooth
-        tablet: { smooth: true },
-
-        // for mobile
-        smartphone: { smooth: true }
+        lerp: 0.03, // Linear Interpolation, 0 > 1 // Try 0.01
+        multiplier: 1.4, // Effect Multiplier
+        reloadOnContextChange: true,
+        touchMultiplier: 2,
+        smoothMobile: 0,
+        smartphone: {
+            smooth: !0,
+            breakpoint: 767
+        },
+        tablet: {
+            smooth: !1,
+            breakpoint: 1024
+        },
     });
-    locoScroll.on("scroll", ScrollTrigger.update);
+    //new code end
+
+    scroll.on("scroll", ScrollTrigger.update);
 
     ScrollTrigger.scrollerProxy("#main", {
         scrollTop(value) {
             return arguments.length
-                ? locoScroll.scrollTo(value, 0, 0)
-                : locoScroll.scroll.instance.scroll.y;
+                ? scroll.scrollTo(value, 0, 0)
+                : scroll.scroll.instance.scroll.y;
         },
         getBoundingClientRect() {
             return {
@@ -35,7 +47,7 @@ function locomotiveAnimation() {
           : "fixed"*/
     });
 
-    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+    ScrollTrigger.addEventListener("refresh", () => scroll.update());
 
     ScrollTrigger.refresh();
 
