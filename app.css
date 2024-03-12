@@ -356,13 +356,6 @@ nav .nav-link h4 {
     font-size: 2rem;
 }
 
-.underline {
-    height: 0.08vw;
-    width: 100%;
-    background-color: #cfcfcf;
-    margin: 3vw 0vw;
-}
-
 #page3 {
     min-height: 100vh;
     width: 100%;
@@ -379,7 +372,9 @@ nav .nav-link h4 {
 
 }
 
-#page3 .underline {
+.underline {
+    width: 70%;
+    border-bottom: 3px solid #dadada;
     margin-left: 28vw;
 }
 
@@ -624,9 +619,10 @@ nav .nav-link h4 {
 }
 
 .underline-text {
-    height: 0.08vw;
+    /* height: 0.08vw;
     width: 100%;
-    background-color: #cfcfcf;
+    background-color: #cfcfcf; */
+    border-bottom: 3px solid #dadada;
 }
 
 #container-1 {
@@ -716,9 +712,10 @@ nav .nav-link h4 {
 
 
 .underline1 {
-    height: 0.08vw;
+    /* height: 0.08vw;
     width: 100%;
-    background-color: #cfcfcf;
+    background-color: #cfcfcf; */
+    border-bottom: 3px solid #dadada;
     margin-top: -12vh;
 }
 
@@ -792,6 +789,11 @@ nav .nav-link h4 {
 .page4-info h5 {
     font-size: 1.5vw;
     white-space: nowrap;
+}
+
+.underline8 {
+    border-bottom: 3px solid #dadada;
+    margin: 4.5vw 0vw;
 }
 
 #page5 {
@@ -903,9 +905,10 @@ nav .nav-link h4 {
 }
 
 .underline3 {
-    height: 0.08vw;
+    /* height: 0.08vw;
     width: 100%;
-    background-color: #cfcfcf;
+    background-color: #cfcfcf; */
+    border-bottom: 3px solid #dadada;
     margin: 4.5vw 0vw;
 }
 
@@ -1317,9 +1320,10 @@ nav .nav-link h4 {
     }
 
     .underline {
-        height: 0.08vw;
+        /* height: 0.08vw; */
         width: 100%;
-        background-color: #cfcfcf;
+        /* background-color: #cfcfcf; */
+        border-bottom: 3px solid #dadada;
         margin: 3vw 0vw;
     }
 
@@ -1343,11 +1347,9 @@ nav .nav-link h4 {
 
     }
 
-    .underline-div {
-        padding: 3vw;
-    }
-
-    #page3 .underline {
+    .underline {
+        width: 100%;
+        border-bottom: 3px solid #dadada;
         margin-left: 0vw;
     }
 
@@ -1596,9 +1598,10 @@ nav .nav-link h4 {
     }
 
     .underline-text {
-        height: 0.08vw;
+        /* height: 0.08vw;
         width: 100%;
-        background-color: #cfcfcf;
+        background-color: #cfcfcf; */
+        border-bottom: 3px solid #dadada;
     }
 
     #container-1 {
@@ -1691,6 +1694,10 @@ nav .nav-link h4 {
         font-weight: 800;
     }
 
+    .underline8 {
+        border-bottom: 3px solid #dadada;
+        margin: 4.5vw 0vw;
+    }
 
 
     .underline1 {
@@ -1970,7 +1977,6 @@ nav .nav-link h4 {
         font-family: font3;
         left: -10vw;
     }
-
 
     /* page 6 end */
 }

@@ -23,7 +23,6 @@ function locomotive() {
 
     ScrollTrigger.refresh();
 };
-// locomotive();
 
 function loadingAnimation() {
     var tl = gsap.timeline();
@@ -80,9 +79,6 @@ function loadingAnimation() {
     }, "-1.2");
 }
 
-// loadingAnimation();
-
-
 function cursorAnimation() {
     Shery.mouseFollower({
         skew: true,
@@ -134,8 +130,6 @@ function cursorAnimation() {
     })
 }
 
-// cursorAnimation();
-
 function sheryAnimation() {
     Shery.imageEffect(".image", {
         style: 5,
@@ -143,9 +137,6 @@ function sheryAnimation() {
         gooey: true,
     });
 }
-
-// sheryAnimation();
-
 
 function flagAnimation() {
     document.addEventListener('mousemove', function (dets) {
@@ -169,6 +160,20 @@ function flagAnimation() {
 
 
 function scrollAnimation() {
+    // var x = gsap.timeline();
+    gsap.from('.underline', {
+        width: "0%",
+        opacity: 0,
+        delay: 0.9,
+        // duration: 0.9,
+        scrollTrigger: {
+            trigger: '#page3',
+            scroller: '#main',
+            // markers: true,
+            // start: "top 80%",
+            // scrub: 5
+        }
+    })
     gsap.from('#page4-container', {
         y: 200,
         opacity: 0,
@@ -179,7 +184,37 @@ function scrollAnimation() {
             trigger: '#page4-container',
             scroller: '#main',
             // markers: true,
-            start: 'top 70%',
+            // start: 'top 70%',
+        }
+    })
+
+    gsap.from('.underline8', {
+        width: "0%",
+        opacity: 0,
+        delay: 0.9,
+        duration: 0.9,
+        scrollTrigger: {
+            trigger: '#page4',
+            scroller: '#main',
+            // markers: true,
+            // start: "top 80%",
+            // scrub: 5
+        }
+    })
+
+
+
+    gsap.from('.underline3', {
+        width: "0%",
+        opacity: 0,
+        delay: 0.9,
+        duration: 0.9,
+        scrollTrigger: {
+            trigger: '#page6',
+            scroller: '#main',
+            // markers: true,
+            // start: "top 80%",
+            // scrub: 5
         }
     })
 }
@@ -232,12 +267,8 @@ if (!/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navig
     scrollAnimation();
 }
 else {
-    // var extraImg = document.querySelectorAll(".extraImg");
-    // extraImg.forEach(function (img) {
-    //     img.style.display = "none";
-    // })
     mobileScreen();
-    // gsapMobileScroll();
+    scrollAnimation();
 }
 
 
